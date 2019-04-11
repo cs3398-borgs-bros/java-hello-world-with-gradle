@@ -38,4 +38,13 @@ public class TestGreeter {
       assertEquals(g.sayHello(),"Hello!");
    }
 
+   @Test
+   public void newtestDLGreeterFail() 
+   {
+      g.setName("Daniel is testing");
+      assertEquals(g.sayHello(),"Hello Daniel is testing!");
+      g.setName("");
+      assertEquals(g.sayHello(),"Hello World!");
+   }
+
 }
