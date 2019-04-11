@@ -66,7 +66,7 @@ public class TestGreeter {
    public void newtestCKGreeterpass()
    {
       g.setName("Hey its Carter"); 
-      assertEquals(g.setName(), "Hey its Carter!");
+      assertEquals(g.setName(), "Hello Hey its Carter!");
 
 
    }   
