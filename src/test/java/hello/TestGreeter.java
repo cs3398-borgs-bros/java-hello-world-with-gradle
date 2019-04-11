@@ -10,7 +10,6 @@ public class TestGreeter {
 
    @Before
    public void setUp() throws Exception 
-
    {
       g = new Greeter();
    }
@@ -33,11 +32,10 @@ public class TestGreeter {
    @Test
    public void newtestDLGreeterPass() 
    {
-      g.setName("World");
-      assertEquals(g.sayHello(),"Hello World!");
+      g.setName("Daniel is testing");
+      assertEquals(g.sayHello(),"Hello Daniel is testing!");
       g.setName("");
       assertEquals(g.sayHello(),"Hello!");
-      
-
    }
+
 }
