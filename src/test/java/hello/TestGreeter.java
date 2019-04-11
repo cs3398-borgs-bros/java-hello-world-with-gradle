@@ -62,4 +62,13 @@ public class TestGreeter {
 
    }
 
+   @Test 
+   public void newtestCKGreeterpass()
+   {
+      g.setName("Hey its Carter"); 
+      assertEquals(g.setName(), "Hey its Carter!");
+
+
+   }   
+
 }
