@@ -61,5 +61,18 @@ public class TestGreeter {
       assertEquals(g.sayHello(),"Hello World!");
 
    }
+   
+   @Test
+   
+   public void newtestWGGreeterPass() 
+   {
+
+      g.setName("its your boy Walter follow me at @aguynamewalter");
+
+      assertEquals(g.getName(),"its your boy Walter follow me at @aguynamewalter");
+
+      assertEquals(g.sayHello(),"Hello its your boy Walter follow me at @aguynamewalter!");
+
+   }
 
 }
