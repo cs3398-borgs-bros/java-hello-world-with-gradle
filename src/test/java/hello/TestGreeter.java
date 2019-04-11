@@ -75,7 +75,7 @@ public class TestGreeter {
    public void newtestCKGreeterFail()
    {
       g.setName("Hey its Carter"); 
-      assertEquals(g.setName(), "Hey its Carter");
+      assertEquals(g.sayHello(), "hey its Carter");
    }
 
 }
