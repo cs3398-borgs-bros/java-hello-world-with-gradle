@@ -76,12 +76,12 @@ public class TestGreeter {
 	   
    }
    
-//   @Test
-//   
-//   public void newtestEDCGreeterFail() {
-//	   g.setName("Elvin");
-//	   
-//	   assertEquals(g.sayHello(), "Hello!");
-//   }
+   @Test
+   
+   public void newtestEDCGreeterFail() {
+	   g.setName("Elvin");
+	   
+	   assertEquals(g.sayHello(), "Hello!");
+   }
 
 }
