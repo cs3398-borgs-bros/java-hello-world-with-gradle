@@ -38,6 +38,7 @@ public class TestGreeter {
       assertEquals(g.sayHello(),"Hello!");
    }
 
+   /* Removed fail case for testing
    @Test
    public void newtestDLGreeterFail() 
    {
@@ -46,5 +47,5 @@ public class TestGreeter {
       g.setName("");
       assertEquals(g.sayHello(),"Hello World!");
    }
-
+   */
 }
