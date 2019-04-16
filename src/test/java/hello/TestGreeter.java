@@ -74,18 +74,5 @@ public class TestGreeter {
       assertEquals(g.sayHello(),"Hello its your boy Walter follow me at @aguynamewalter!");
 
    }
-   
-   @Test
-   
-   public void newtestWGGreeterFail() 
-   {
-
-      g.setName("its your boy Walter follow me at @aguynamewalter");
-
-      assertEquals(g.getName(),"its your boy Walter follow me at ");
-
-      assertEquals(g.sayHello(),"Hello its your boy Walter follow me at ");
-
-   }
 
 }
