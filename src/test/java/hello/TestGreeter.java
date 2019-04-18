@@ -70,7 +70,7 @@ public class TestGreeter {
 	      assertEquals(g.sayHello(),"Hello luke!");
 	   
    }
-   @Test
+   /*@Test
 
    public void newtestLHGreeterFail() 
 
@@ -82,6 +82,6 @@ public class TestGreeter {
 
       assertEquals(g.sayHello(),"!");
 
-   }
+   }*/
 
 }
