@@ -38,6 +38,8 @@ dependencies {
 // the following is a work around to fix the warning:
 //          warning: unknown enum constant Status.STABLE
     testCompileOnly "org.apiguardian:apiguardian-api:1.0.0"
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
 }
 // end::dependencies[]
 
