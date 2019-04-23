@@ -43,24 +43,24 @@ dependencies {
 
 
 task dist {
-    description "Generate the dist(s) into the dist folder."
+    description "Generate the dist(s) into the dist folder need to fix this."
 }
 
 task distSetup {
     description "Generate the dist folder."
     delete "${projectDir}/dist"
     copy {
-        from "${buildDir}/libs"
-        into "${projectDir}/dist/main"
+        from "${buildDir}/build/distributions"
+        into "${projectDir}/dist/executables"
     }
     copy {
-        from "${projectDir}/build/classes/test/Output"
-        into "${projectDir}/dist/test"
+        from "${projectDir}/build/reports"
+        into "${projectDir}/dist/test_reports"
     }
 }
 
 task zipDist(type: Zip, dependsOn: distSetup) {
-    from "${projectDir}/dist/main"
+    from "${projectDir}/dist/executables"
     from "${projectDir}/Readme.md"
     destinationDir = file("${projectDir}/dist")
     version = "${version}"
@@ -71,7 +71,7 @@ task zipDist(type: Zip, dependsOn: distSetup) {
 }
 
 task zipTest(type: Zip, dependsOn: distSetup) {
-    from "${projectDir}/dist/test"
+    from "${projectDir}/dist/test_reports"
     from "${projectDir}/Readme.md"
     destinationDir = file("${projectDir}/dist")
     version = "${version}"
