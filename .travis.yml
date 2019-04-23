@@ -2,37 +2,41 @@ language: java
 # the following will skip the installation of dependencies.
 install: true
 
-# the following forces the use of JDK 8
-# matrix:
-#  include:
-# - jdk: oraclejdk8
-  
+
 script:
-  - gradle clean build
-  - gradle dist --rerun-tasks
-# - gradle distSetup --rerun-tasks
-# - gradle zipDist --rerun-tasks
-# - gradle zipTest --rerun-tasks
+ - gradle clean build
+ - pwd
+ - tar -zcf hello_world_build.tar.gz build
+ - gradle distSetup
+ - gradle distZip
+ - gradle dist --rerun_tasks
+ - ls -R
 
 before_deploy:
-  - git config --global user.email "builds@travis-ci.com"
-  - git config --global user.name "Travis CI"
-  - export GIT_TAG=$TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://$GITPERM@github.com/drlehr/java-hello-world-with-gradle  --tags
-  - ls -R
-  
+ - git config --global user.email "builds@travis-ci.com"
+ - git config --global user.name "Travis CI"
+ - export GIT_TAG=$TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER
+ - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+ - git push -q https://$GITPERM@github.com/drlehr/java-hello-world-with-gradle  --tags
+ - cd ..
+ - pwd
+ - ls -R
+
 deploy:
-  skip_cleanup: true
-  provider: releases
-  api_key: 
-    secure: $GITPERM
-    
-  file:
-  - "README.md"
-  - "build.gradle"
-  - ".travis.yml"
-  
-  on:
-    tags: false
-    all_branches: true
+ skip_cleanup: true
+ overwrite: true
+ provider: releases
+ api_key:
+   secure: $GITPERM
+ file_glob: true
+ file:
+ - README.md
+ - dist/
+ - hello_world_build.tar.gz
+ - *.gz
+ - *
+
+
+ on:
+   tags: false
+   all_branches: true
